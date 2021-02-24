@@ -19,4 +19,15 @@ describe("Users", () => {
     
     expect(response.status).toBe(201);
   });
+
+  it("Should not able to create a user with exists email", async () => {
+    const response = await request(app)
+      .post("/users")
+      .send({
+        email: "user@example.com",
+        name: "testname"
+      });
+    
+    expect(response.status).toBe(400);
+  });
 });
