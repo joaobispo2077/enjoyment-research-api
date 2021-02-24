@@ -15,7 +15,7 @@ export default async (): Promise<Connection> => {
 
   return createConnection(
     Object.assign(defaultOptions, {
-      database 
+      database: database 
     })
   );
 }
