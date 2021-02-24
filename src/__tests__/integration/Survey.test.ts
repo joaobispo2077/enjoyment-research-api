@@ -16,8 +16,16 @@ describe("Surveys", () => {
         title: "example survey title",
         description: "example survey description"
       });
-    
+
     expect(response.status).toBe(201);
     expect(response.body).toHaveProperty("id");
+  });
+
+  it("Should be able to get all surveys", async () => {
+    const response = await request(app)
+      .get("/surveys");
+
+    expect(response.status).toBe(200);
+    expect(response.body.length > 0).toBe(true);
   });
 });
