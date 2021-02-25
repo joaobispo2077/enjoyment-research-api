@@ -8,10 +8,8 @@ const _getDatabase = (defaultOptions: any) => {
 
 export default async (): Promise<Connection> => {
   const defaultOptions = await getConnectionOptions();
-  console.log("env", process.env.NODE_ENV)
 
   const database = _getDatabase(defaultOptions);
-  console.log("database", database);
 
   return createConnection(
     Object.assign(defaultOptions, {
