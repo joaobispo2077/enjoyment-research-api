@@ -1,7 +1,7 @@
 import {  Connection, createConnection, getConnectionOptions  } from "typeorm";
 
 const _getDatabase = (defaultOptions: any) => {
-  return process.env.NODE_ENV === "test" ? 
+  return process.env.NODE_ENV ? 
   `./src/database/database.${process.env.NODE_ENV}.sqlite` : 
   defaultOptions.database;
 }
