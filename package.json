@@ -8,9 +8,7 @@
   "scripts": {
     "dev": "set NODE_ENV=dev&& ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
     "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
-    "pretest": "Remove-Item ./src/database/database.test.sqlite",
-    "test": "set NODE_ENV=test&& jest",
-    "posttest": "Remove-Item ./src/database/database.test.sqlite",
+    "test": "set NODE_ENV=test&& jest -i",
     "test:watch": " set NODE_ENV=dev&& jest --watch"
   },
   "dependencies": {
